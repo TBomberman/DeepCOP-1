@@ -61,9 +61,7 @@ def get_feature_dict(file, delimiter=',', key_index=0, use_int=False):
         return dict((row[key_index], row[1:]) for row in reader)
 
 def load_gene_expression_data(file,lm_gene_entrez_ids=None):
-    return parse(
-        file,
-        col_meta_only=False, row_meta_only=False, rid=lm_gene_entrez_ids)
+    return parse.parse(file, col_meta_only=False, row_meta_only=False, rid=lm_gene_entrez_ids)
 
 def printProgressBar (iteration, total, prefix = 'Progress', suffix = 'Complete', decimals = 1, length = 25,
                       fill = '>', pct_interval=5):
